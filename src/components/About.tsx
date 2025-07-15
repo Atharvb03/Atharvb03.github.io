@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       degree: 'HSC (Higher Secondary Certificate)',
-      institution: 'Dnyandeep College',
+      institution: 'Dnyandeep Vidya Mandir College',
       period: 'Completed',
       location: 'Khed, Maharashtra',
       icon: '📚',
