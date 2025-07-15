@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import profilePhoto from '@/assets/atharv-profile.jpg';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
