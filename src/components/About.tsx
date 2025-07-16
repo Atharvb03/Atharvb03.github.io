@@ -73,8 +73,8 @@ const About = () => {
               className="hero-button group"
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.download = 'resume.pdf';
+                link.href = '/Atharv Final Resume.pdf';
+                link.download = 'Atharv Final Resume.pdf';
                 link.click();
               }}
             >
