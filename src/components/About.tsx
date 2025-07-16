@@ -69,7 +69,15 @@ const About = () => {
               </div>
             </div>
 
-            <Button className="hero-button group">
+            <Button 
+              className="hero-button group"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'resume.pdf';
+                link.click();
+              }}
+            >
               <Download className="mr-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
               Download Resume
             </Button>
