@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -58,9 +59,19 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_gmcozni', // Service ID
+        'template_23348h9', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Atharv', // Your name
+        },
+        '4N_reAjVRqT577ZvU' // Public Key
+      );
       
       toast({
         title: "Message Sent Successfully! 🎉",
@@ -74,6 +85,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
         title: "Error Sending Message",
         description: "Please try again or contact me directly via email.",
